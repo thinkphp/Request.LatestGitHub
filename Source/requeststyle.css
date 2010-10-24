@@ -1,0 +1,17 @@
+ul.repositories a {color:#4183C4;text-decoration:none;}
+ul.repositories {width: 450px}
+ul.repositories > li.public {background:url("http://github.com/images/icons/public.png") no-repeat scroll 6px 9px transparent;}
+ul.repositories > li {-moz-border-radius:4px 4px 4px 4px;border:1px solid #DDDDDD;list-style-type:none;margin:0 0 10px;padding:8px 10px 0;}
+ul.repositories ul.repo-stats {background:url("http://github.com/images/modules/pagehead/actions_fade.png") no-repeat scroll 0 0 transparent;border:medium none;float:right;font-size:11px;font-weight:bold;padding-left:15px;position:relative;z-index:5;}
+ul.repo-stats {-moz-border-radius:3px 3px 3px 3px;background:none repeat scroll 0 0 #FFFFFF;border:1px solid #DDDDDD;display:inline-block;margin:0;}
+ul.repositories h3 {font-size:14px;margin:0;padding-left:18px;white-space:nowrap;}
+ul.repositories ul.repo-stats li {border:medium none;color:#666666;}
+ul.repo-stats li {display:inline-block;list-style-type:none;margin:0 !important;}
+ul.repositories .body {-moz-border-radius-bottomleft:4px;-moz-border-radius-bottomright:4px;background:-moz-linear-gradient(center top , #FAFAFA, #EFEFEF) repeat scroll 0 0 transparent;border-top:1px solid #EEEEEE;margin-left:-10px;margin-top:8px;padding:5px 10px;width:100%;}
+ul.repositories p.updated-at {color:#888888;font-size:11px;margin:0;}
+ul.repositories .graph .bars {height:20px;}
+ul.repositories .graph {-moz-border-radius:3px 3px 3px 3px;background:none repeat scroll 0 0 #FFFFFF;border-color:#E5E5E5 #EEEEEE #EEEEEE #E5E5E5;border-style:solid;border-width:1px;margin-left:-5px;margin-top:5px;padding:5px 4px;text-align:center;width:100%;}
+ul.repositories ul.repo-stats li a {background-color:transparent;background-position:5px -2px;border:medium none;color:#666666 !important;}
+ul.repo-stats li.watchers a {background-image:url("http://github.com/images/modules/pagehead/repostat_watchers.png");}
+ul.repo-stats li a {background-position:5px -2px;background-repeat:no-repeat;border-left:1px solid #DDDDDD;color:#666666;display:inline-block;height:21px;line-height:21px;padding:0 5px 0 23px;}
+ul.repo-stats li.forks a {background-image:url("http://github.com/images/modules/pagehead/repostat_forks.png");}

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+   <title>Request.GitHub Plugin MooTools</title>
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/base/base.css" type="text/css">
+   <style type="text/css">
+   a{color: #4183C4}
+   h1{background: url(github-logo.png) no-repeat left top;height: 50px;}
+   h1 div {padding-left: 50px;padding-top: 20px;font-size: 22px}
+   </style>
+   <script src="http://www.google.com/jsapi?key=ABQIAAAA1XbMiDxx_BTCY2_FkPh06RRaGTYH6UMl8mADNa0YKuWNNa8VNxQEerTAUcfkyrr6OwBovxn7TDAH5Q"></script>
+   <script type="text/javascript">google.load("mootools", "1.3");</script>
+   <script type="text/javascript" src="Request.LatestGitHub-yui-compressed.js"></script>
+   <script type="text/javascript">
+       window.addEvent('domready',function(){ 
+              //#example 1
+              var git = new Request.LatestGitHub({ 
+                           onSuccess: function(badge) {
+                                document.id('gh').set('html', badge);
+                           },
+                           onRequest: function() {
+                                document.id('gh').set('text', 'Loading...');
+                           }
+              });
+              //call latest 3 projects from jquery github
+              git.load('jquery',3);
+
+              //#example 2
+              //call latest 3 projects from mootools github
+              document.id('gh2').loadLatestGitHub('mootools',3);
+       });
+   </script>
+</head>
+<body>
+<div id="doc2" class="yui-t7">
+   <div id="hd" role="banner"><h1><div>Request.LatestGitHub Plugin MooTools</div></h1></div>
+   <div id="bd" role="main">
+	<div class="yui-g">
+    <div class="yui-u first" id="gh">	
+    </div>
+    <div class="yui-u" id="gh2">
+    </div>
+</div>
+</div>
+<div id="ft" role="contentinfo"><p>written by @<a href="http://twitter.com/thinkphp">thinkphp</a> download on <a href="http://mootools.net/forge/download/Request_LatestGitHub/v1.0">Forge</a></p></div>
+</div>
+</body>
+</html>

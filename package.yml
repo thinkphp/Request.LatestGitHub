@@ -1,0 +1,7 @@
+name: Request.LatestGitHub
+author: thinkphp
+current: v1.0	  
+category: widgets
+tags: [request,request.jsonp, ajax, github, git,widget, badge]
+docs:  
+demo: http://thinkphp.ro/apps/js-hacks/Request.LatestGitHub/v1.0/ 

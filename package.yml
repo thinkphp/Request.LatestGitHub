@@ -3,5 +3,5 @@ author: thinkphp
 current: v1.0	  
 category: widgets
 tags: [request,request.jsonp, ajax, github, git,widget, badge]
-docs:  
+docs: http://github.com/thinkphp/Request.LatestGitHub/blob/master/Docs/Request.LatestGitHub.md 
 demo: http://thinkphp.ro/apps/js-hacks/Request.LatestGitHub/v1.0/ 

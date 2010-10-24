@@ -11,6 +11,7 @@ license:
 
 requires:
   core/1.3: '*'
+  more/1.2.4.4: Request.JSONP
 
 provides:
   - Request.LatestGitHub

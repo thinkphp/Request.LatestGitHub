@@ -1,19 +1,19 @@
 Class: Request.LatestGitHub (#Request.LatestGitHub)
 ===================================================
 
-Request.LatestGithub is a Plugin MooTools which allows you to display latest public repos or all the projects from any user GitHub as a widget expanding the class Request and using PHP, YQL and JSONP-X.
+Request.LatestGithub is a Plugin MooTools which allows you to display latest public repos or all the projects from any user GitHub as a widget by expanding the class Request.JSONP from MooTools More.
 
 ### Extends:
 
-Request
+Request.JSONP
 
 Request.LatestGitHub Method: constructor(#Request.LatestGitHub: constructor)
 ---------------------------------------------------------------------------
 
 ### Notes:
 
-- *Request.LatestGitHub* requires MooTools Core only - no MooTools More dependencies.
-- visit [http://thinkphp.ro/apps/js-hacks/Request.LatestGitHub/v1.0](http://thinkphp.ro/apps/js-hacks/Request.LatestGitHub/v1.0) for example usages.
+- *Request.LatestGitHub* requires MooTools Core  Request.JSONP from MooTools More dependencies.
+- visit [http://thinkphp.ro/apps/js-hacks/Request.LatestGitHub/](http://thinkphp.ro/apps/js-hacks/Request.LatestGitHub/v2.0) for example usages.
 
 ### Syntax: 
 
@@ -23,7 +23,7 @@ var git = new Request.LatestGitHub([options]);
 
 ### options
 
-- all options of Request.
+- all options known of Request.JSONP.
 - style (*String*, default 'requeststyle.css') (optional) path css filename for styled badge.
 - gitstyleID (*String* - default 'gitid') (optional) the ID of link Element which is injected at the end of the body for style.
 
@@ -37,7 +37,7 @@ All the events you know from Request.
 
 #### success
 
-(*Function*) Fired when the request has completed. This overrides the signature of the Request success event.
+(*Function*) Fired when the request has completed. This overrides the signature of the Request.JSONP success event and called this.parent.
 
 #### Signature:
 
@@ -45,7 +45,7 @@ onSuccess(response);
 
 ##### Arguments:
 
-1. response (*string*) the response from PHP which try to make a request YQL at github.
+1. response (*string*) the response from service YQL received through JSONP-X callback.
 
 ### Request.LatestGitHub Method: load (#Request.LatestGitHub : load)
 

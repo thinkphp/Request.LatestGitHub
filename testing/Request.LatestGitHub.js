@@ -1,7 +1,7 @@
 /*
 ---
 
-description: Request.LatestGithub is a Plugin MooTools which allows you to display latest public repos or all the projects from any user GitHub as a widget expanding the class Request and using PHP, YQL and JSONP-X.
+description: Request.LatestGithub is a Plugin MooTools which allows you to display latest public repos or all the projects from any user GitHub as a widget by expanding the class Request.JSONP from MooTools More.
 
 authors:
   - Adrian Statescu (http://thinkphp.ro)
@@ -19,11 +19,14 @@ provides:
 
 Request.LatestGitHub = new Class({
 
-       Extends: Request,
+       Extends: Request.JSONP,
 
        options: {
-          url: 'requestgit.php',
-          method: 'get',
+          url: "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fgithub.com%2F{username}%22%20and%20xpath%3D%22%2F%2Fdiv%5B%40class%3D'first'%5D%2Ful%5B%40class%3D'repositories'%5D%2Fli%5B%40class%3D'public'%5D%22%20limit%20{amount}%0A",
+          data: {                
+                format: "xml",
+                diagnostics: "true", 
+          },
           style: 'requeststyle.css',
           gitstyleID: 'gitid' 
        }, 
@@ -31,22 +34,21 @@ Request.LatestGitHub = new Class({
        load: function(user, amount) {
           this.user = user || 'thinkphp';
           this.amount = (!!amount && !(amount<=0) && ($type(amount)== 'number')) ? amount : 2;
-          this.send({
-               data:{
-                    user: this.user,
-                    amount: this.amount
-                    }
-          }); 
+          this.options.url = this.options.url.substitute({username: this.user, amount: this.amount}) ;
+          this.send();
        },
        updateResponse: function(resp) {
            var ul = '<ul class="repositories">';
-               ul += resp;
+               for(var i=0;i<resp.length;i++) {
+                   ul += resp[i].replace(/href=" href="/g,' href="http://github.com')
+                                .replace(/ src="/g,' src="http://github.com');
+               } 
                ul += '</ul>';
           return ul; 
        },
-       success: function(resp) {
-          this.response = this.updateResponse(resp);
-          this.fireEvent('success',[this.response]);
+       success: function(o, script) {
+          this.response = this.updateResponse(o[0].results);
+          this.parent(this.response, script);          
           this.addStyle(); 
        },
        addStyle: function() {

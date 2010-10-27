@@ -1,20 +1,22 @@
 /*
 ---
 
-description: Request.LatestGithub is a Plugin MooTools which allows you to display latest public repos or all the projects from any user GitHub as a widget by expanding the class Request.JSONP from MooTools More.
+script: Request.JSONP.js
+
+description: Defines Request.JSONP, a class for cross domain javascript via script injection.
+
+license: MIT-style license
 
 authors:
-  - Adrian Statescu (http://thinkphp.ro)
-
-license:
-  - MIT-style license
+- Aaron Newton
+- Guillermo Rauch
 
 requires:
-  core/1.3: '*'
-  more/1.2.4.4: Request.JSONP
+- core: 1.3/Element
+- /Log
 
-provides:
-  - Request.LatestGitHub
+provides: [Request.JSONP]
+
 ...
 */
 

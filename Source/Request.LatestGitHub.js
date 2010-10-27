@@ -11,7 +11,6 @@ license:
 
 requires:
   core/1.3: '*'
-  more/1.2.4.4: Request.JSONP
 
 provides:
   - Request.LatestGitHub
@@ -41,7 +40,7 @@ Request.LatestGitHub = new Class({
        updateResponse: function(resp) {
            var ul = '<ul class="repositories">';
                for(var i=0;i<resp.length;i++) {
-                   ul += resp[i].replace(/href=" href="/g,' href="http://github.com')
+                   ul += resp[i].replace(/ href="/g,' href="http://github.com')
                                 .replace(/ src="/g,' src="http://github.com');
                } 
                ul += '</ul>';
